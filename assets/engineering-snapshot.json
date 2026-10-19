@@ -1,0 +1,68 @@
+{
+  "measured": "2026-10-19",
+  "method": "Physical lines in committed first-party application source and tests/test support, including comments and blank lines. Excludes dependencies, build output, generated native projects, assets, lockfiles and type declarations. Documentation, tooling and configuration are counted separately and are not included in these source figures.",
+  "coverageScope": "Saved unit/component coverage reports for the configured executable JavaScript/TypeScript source. Coverage percentages do not apply to every physical line in the repository. CSS, schema/migrations, dependencies, generated output and other uninstrumented files are outside the measured coverage scope.",
+  "products": {
+    "picpledge": {
+      "name": "PicPledge",
+      "sourceLines": 131720,
+      "sourceFiles": 999,
+      "testSupportLines": 174355,
+      "testSupportFiles": 1069,
+      "coverage": {
+        "reported": "2026-10-19",
+        "executableFiles": 833,
+        "metrics": {
+          "statements": {
+            "covered": 31135,
+            "total": 31135,
+            "percent": 100
+          },
+          "branches": {
+            "covered": 22578,
+            "total": 22578,
+            "percent": 100
+          },
+          "functions": {
+            "covered": 7645,
+            "total": 7645,
+            "percent": 100
+          },
+          "lines": {
+            "covered": 27128,
+            "total": 27128,
+            "percent": 100
+          }
+        }
+      }
+    },
+    "recalen": {
+      "name": "Recalen",
+      "sourceLines": 390720,
+      "sourceFiles": 1991,
+      "testSupportLines": 528369,
+      "testSupportFiles": 1999,
+      "coverage": {
+        "reported": "2026-08-21",
+        "reportFiles": 1785,
+        "metrics": {
+          "branches": {
+            "covered": 60040,
+            "total": 60045,
+            "percent": 99.99
+          },
+          "functions": {
+            "covered": 19297,
+            "total": 19297,
+            "percent": 100
+          },
+          "lines": {
+            "covered": 74543,
+            "total": 74543,
+            "percent": 100
+          }
+        }
+      }
+    }
+  }
+}
