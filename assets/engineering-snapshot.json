@@ -63,6 +63,56 @@
           }
         }
       }
+    },
+    "ttsnative": {
+      "name": "TTSNative",
+      "measured": "2026-10-20",
+      "repository": "https://github.com/carsonmcrae/ttsnative",
+      "commit": "7563eb3",
+      "sourceScope": "Web app (apps/web/src, index.html and runtime scripts in public/), local server (apps/server/src), voice-cloning worker (apps/chatterbox-worker/src) and website (site/*.html, *.css, *.js). Excludes the generated API types, build and release scripts, configuration and documentation.",
+      "sourceLines": 20148,
+      "sourceFiles": 161,
+      "testSupportLines": 12209,
+      "testSupportFiles": 68,
+      "coverage": {
+        "reported": "2026-10-20",
+        "source": "GitHub Actions CI run on main (commit 7563eb3)",
+        "scope": "Web app unit/component tests (Vitest) and server tests (pytest with branch coverage). The voice-cloning worker and the website are outside the coverage scope.",
+        "web": {
+          "statements": {
+            "covered": 2389,
+            "total": 2389,
+            "percent": 100
+          },
+          "branches": {
+            "covered": 1511,
+            "total": 1511,
+            "percent": 100
+          },
+          "functions": {
+            "covered": 879,
+            "total": 879,
+            "percent": 100
+          },
+          "lines": {
+            "covered": 2119,
+            "total": 2119,
+            "percent": 100
+          }
+        },
+        "server": {
+          "statements": {
+            "covered": 4469,
+            "total": 4469,
+            "percent": 100
+          },
+          "branches": {
+            "covered": 810,
+            "total": 810,
+            "percent": 100
+          }
+        }
+      }
     }
   }
 }
