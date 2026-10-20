@@ -61,6 +61,7 @@ p+p{margin-top:20px}
 .local-project{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:42px 0;display:flex;align-items:center;justify-content:space-between;gap:50px}
 .local-project h2{font-size:38px;margin:12px 0}
 .local-project p{max-width:680px;font-size:17px;color:var(--muted)}
+.project-icon{display:block;border-radius:13px;margin-bottom:14px}
 .link-stack{display:flex;flex-direction:column;flex-shrink:0}
 .about-section{padding:78px 0 86px}
 .about-section h2{font-size:48px;margin-top:18px;margin-bottom:30px}
