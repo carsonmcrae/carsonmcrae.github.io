@@ -1,0 +1,60 @@
+<!doctype html>
+<!-- Purpose: Present Carson McRae's product work. Scope: Static, accessible portfolio content. Does NOT belong: Application runtime, private data, or authentication. -->
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TTSNative studio voice evaluation | Carson McRae</title><meta name="description" content="How Carson McRae traced TTSNative&#x27;s voice pipeline and ran a blind six-voice listening test to find out whether a longer recording session makes a custom studio voice sound more like its speaker."><link rel="canonical" href="https://carsonmcrae.github.io/studio-voice/">
+<meta property="og:type" content="website"><meta property="og:title" content="TTSNative studio voice evaluation | Carson McRae"><meta property="og:description" content="How Carson McRae traced TTSNative&#x27;s voice pipeline and ran a blind six-voice listening test to find out whether a longer recording session makes a custom studio voice sound more like its speaker."><meta property="og:url" content="https://carsonmcrae.github.io/studio-voice/">
+<meta name="theme-color" content="#f8f8f5"><meta name="color-scheme" content="light dark"><script src="../theme.js?v=bcb7a6f37748"></script><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../styles.css?v=bd8d9ffbfa49"></head>
+<body><a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><a class="wordmark" href="../index.html" aria-label="Carson McRae, home"><span class="monogram" aria-hidden="true">CM</span> Carson McRae</a>
+<nav aria-label="Main"><a href="../index.html#work">Work</a><a href="../picpledge/">PicPledge</a><a href="../recalen/">Recalen</a><a href="../delivery/">Delivery</a><a href="https://github.com/carsonmcrae">GitHub <span aria-hidden="true">↗</span></a></nav>
+<button type="button" class="theme-toggle" data-theme-toggle aria-pressed="false" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 15.3A8.5 8.5 0 0 1 8.7 4a8.5 8.5 0 1 0 11.3 11.3Z"/></svg><span>Dark mode</span><span class="theme-rail" aria-hidden="true"><span class="theme-knob"></span></span></button></header><main id="main" tabindex="-1"><section class="case-hero"><a class="back-link" href="../index.html#work">← All work</a><p class="eyebrow">Voice evaluation / TTSNative</p>
+<h1>Does recording<br>more help?</h1><p class="case-summary">TTSNative's Voice Studio builds a custom studio voice from a long guided recording session. I traced what the voice engine actually uses, then ran a blind listening test of six voices. A careful recording setup made the big difference over a quick clone. Recording 48 passages instead of about 13 did not.</p>
+<div class="case-links"><a class="button" href="https://ttsnative.com/">Visit TTSNative <span aria-hidden="true">↗</span></a><a class="text-link" href="#results">See the results <span aria-hidden="true">↓</span></a><a class="text-link" href="https://github.com/carsonmcrae/ttsnative">Explore the source <span aria-hidden="true">↗</span></a></div>
+<dl class="metrics"><div><dt>9 of 10</dt><dd>items where the early voice beat a quick clone (p = 0.02)</dd></div><div><dt>1 in 3</dt><dd>takes whose audio the complete voice used (14 of 42)</dd></div><div><dt>~15</dt><dd>suggested studio passages, down from 48</dd></div></dl></section>
+<div class="case-layout"><aside class="case-index"><p class="eyebrow">In this case study</p><nav aria-label="Studio voice case study"><a href="#question">The question</a><a href="#engine">What the code showed</a><a href="#experiment">The experiment</a><a href="#results">Results</a><a href="#meaning">What it means</a><a href="#changes">What I changed</a><a href="#listening">Listening notes</a><a href="#next">Next steps</a></nav></aside>
+<div class="case-content"><section id="question" class="reading-section"><p class="eyebrow">The question</p><h2>Is a long session worth it?</h2>
+<p>TTSNative is a free, open-source (MIT) reader that turns documents into speech on your own computer. Its optional Voice Studio can clone your own voice from a quick 15–20 second recording, or build a studio voice from a long guided session.</p>
+<p>My session was 48 short passages: about 30 minutes of my time for 7.6 minutes of audio. That is a lot to ask of anyone. Does a voice built from it sound more like the speaker than a quick clone?</p></section>
+<section id="engine" class="reading-section"><p class="eyebrow">What the code showed</p><h2>What the engine actually uses.</h2>
+<p>Before testing anything, I traced the voice pipeline. The engine, Chatterbox Turbo (open source, MIT), is zero-shot: it copies a voice at the moment it speaks, and no model is trained on the recordings. When it speaks, it draws on:</p>
+<ul><li>10 seconds of one take, for the voice's sound;</li><li>up to three takes per speaking style, for rhythm;</li><li>two speaker embeddings, numerical summaries of the speaker, averaged over all takes.</li></ul>
+<p>In the complete voice, the audio of only 14 of 42 takes was used. The averaged embeddings settle after about 8–12 takes. So the open question was whether the rest of the session added anything you could hear.</p></section>
+<section id="experiment" class="reading-section"><p class="eyebrow">The experiment</p><h2>Six voices, ten new lines, rated blind.</h2>
+<p>Six voices read ten items that no voice had read before. They used the app's real synthesis path with fixed seeds, and six of my takes were held out of every build.</p>
+<ul class="scope-list"><li>Narration</li><li>Dialogue</li><li>A sad line</li><li>An excited line</li><li>A question</li><li>Unusual words</li><li>Names</li><li>Changes of style</li><li>A calm line</li><li>A 47-second passage</li></ul>
+<div class="coverage-table"><table><caption>The six voices</caption><thead><tr><th scope="col">Label</th><th scope="col">Voice</th></tr></thead><tbody>
+<tr><th scope="row">A</th><td>Quick clone recorded on another day</td></tr>
+<tr><th scope="row">A2</th><td>One take from the session</td></tr>
+<tr><th scope="row">B</th><td>Early voice from 13 takes (about 2 minutes)</td></tr>
+<tr><th scope="row">C</th><td>Complete voice from 42 takes, with styles</td></tr>
+<tr><th scope="row">D</th><td>C plus an experimental LoRA fine-tune</td></tr>
+<tr><th scope="row">E</th><td>C with its sound joined from three takes</td></tr></tbody></table></div>
+<p>D is the only voice that involves any training: a small, experimental fine-tune added on top of C.</p>
+<p>I rated every clip blind. The order of the voices was shuffled for each item. I scored each clip's likeness and naturalness from 1 to 5, marked garbled words, and picked the best clip for each item.</p></section>
+<section id="results" class="reading-section"><p class="eyebrow">Results</p><h2>Thirteen takes did as well as forty-two.</h2>
+<div class="coverage-table"><table><caption>Blind ratings: one listener, 10 items. Mean ± 95% interval on a 1–5 scale.</caption><thead><tr><th scope="col">Voice</th><th scope="col">Likeness</th><th scope="col">Natural&shy;ness</th><th scope="col">Best (of 10)</th><th scope="col">Garbled</th></tr></thead><tbody>
+<tr><th scope="row">B, early</th><td>3.60 ±&nbsp;0.32</td><td>3.50 ±&nbsp;0.53</td><td>2</td><td>1</td></tr>
+<tr><th scope="row">E, joined sound</th><td>3.50 ±&nbsp;0.44</td><td>3.30 ±&nbsp;0.30</td><td>2</td><td>1</td></tr>
+<tr><th scope="row">C, complete</th><td>3.40 ±&nbsp;0.52</td><td>3.10 ±&nbsp;0.54</td><td>3</td><td>1</td></tr>
+<tr><th scope="row">D, fine-tune</th><td>3.30 ±&nbsp;0.59</td><td>3.10 ±&nbsp;0.62</td><td>2</td><td>4</td></tr>
+<tr><th scope="row">A2, one take</th><td>3.50 ±&nbsp;0.44</td><td>2.50 ±&nbsp;0.60</td><td>0</td><td>2</td></tr>
+<tr><th scope="row">A, quick clone</th><td>1.70 ±&nbsp;0.66</td><td>2.90 ±&nbsp;0.74</td><td>1</td><td>1</td></tr></tbody></table></div>
+<p>Paired sign tests compare two voices item by item:</p>
+<dl class="role-list"><div><dt>B against A</dt><dd>The early voice beat the quick clone on 9 of 10 items (p = 0.02).</dd></div><div><dt>C against B</dt><dd>The complete voice was better on 3 items, worse on 4 and tied on 3: no difference.</dd></div><div><dt>D against C</dt><dd>The fine-tune was better on 4 items and worse on 5, and it had the most garbled words.</dd></div></dl>
+<p>An automated speaker-similarity check agreed: A scored 0.855, while A2, B and C all scored about 0.92.</p>
+<p class="status-note">I scored the panel on October 21, 2026. No recordings of my voice are published here.</p></section>
+<section id="meaning" class="reading-section"><p class="eyebrow">What it means</p><h2>The setup mattered more than the length.</h2>
+<p>The careful recording setup made the big difference over a quick clone: the same good microphone, a quiet room and clean takes. Recording 48 passages instead of about 13 did not, and the small fine-tune didn't help yet.</p>
+<p>One take from the session (A2) scored close to the early voice on likeness, but lowest of all on naturalness.</p></section>
+<section id="changes" class="reading-section"><p class="eyebrow">What I changed</p><h2>Ask only for what the voice uses.</h2>
+<ul><li>The studio session asks for about 15 suggested passages instead of 48, and points to the most useful one to record next.</li><li>The voice tiers say what they mean (Foundation, Developing and Complete), and that no model is trained.</li><li>A rebuilt expression can be switched back.</li><li>A blind listening panel tool makes this test repeatable.</li></ul>
+<p class="status-note">These app changes are not in a release yet.</p></section>
+<section id="listening" class="reading-section"><p class="eyebrow">Listening notes</p><h2>What the scores don't show.</h2>
+<p>Alongside the scores, I noted where the voices still fell short of a real reading:</p>
+<ul><li>Excited lines and questions lacked real inflection.</li><li>Every voice stumbled on words like gnocchi, quinoa and “Dr. Nguyen”.</li><li>Background static was present while speaking but cut to dead silence in the pauses.</li><li>Changes of style within a paragraph didn't flow, and calm lines sounded least like me.</li><li>An unquoted inner thought was read the same way as quoted speech.</li></ul></section>
+<section id="next" class="reading-section"><p class="eyebrow">Next steps</p><h2>Fix what I heard, then test again.</h2>
+<ul><li>Fill pauses with matching room tone.</li><li>Add better guidance and checks for expressive takes.</li><li>Use the pronunciation dictionary for unusual words.</li><li>Try a second engine or a better fine-tune, and adopt one only if a blind test shows it wins.</li></ul>
+<p class="status-note">This was one listener and ten items: a careful first test, not a study.</p></section>
+<section class="reading-section reflection"><p class="eyebrow">What I took from it</p><p>The useful answer was a smaller ask. Instead of half an hour at the microphone, the studio can ask for what the voice actually uses, and the same blind test can check the next change.</p></section>
+</div></div><section class="next-case"><p class="eyebrow">The product</p><h2><a href="https://ttsnative.com/">TTSNative <span aria-hidden="true">↗</span></a></h2><p>A private document reader that turns PDFs, EPUBs, and Word documents into natural speech on your own computer, with optional consent-based voice cloning.</p></section></main><footer class="site-footer"><div><strong>Carson McRae</strong><p>Product direction, design, engineering, and delivery.</p></div>
+<div><a href="https://www.linkedin.com/in/carsonmcrae/">LinkedIn <span aria-hidden="true">↗</span></a><a href="https://github.com/carsonmcrae">GitHub <span aria-hidden="true">↗</span></a><a href="../index.html">All work</a></div></footer></body></html>

@@ -1,6 +1,6 @@
 # Carson McRae
 
-A static portfolio of product work: PicPledge and Recalen case studies, plus TTSNative, an open-source app (formerly Local TTS).
+A static portfolio of product work: PicPledge and Recalen case studies, plus TTSNative, an open-source app (formerly Local TTS), and a case study of how its studio voice was evaluated.
 
 Visit https://carsonmcrae.github.io/.
 
