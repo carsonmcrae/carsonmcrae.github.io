@@ -1,0 +1,23 @@
+/* SSC case study additions; shared portfolio tokens/layout remain authoritative. */
+.ssc-title{font-size:clamp(46px,6.5vw,84px)!important;max-width:950px}
+.ssc .metrics dt{font-size:44px}
+.ssc .metrics .qualitative{font-size:27px}
+.ssc .case-art img{max-height:none;background:#092c27}
+.ssc .result-note{font-size:14px;color:var(--muted);max-width:850px;margin-bottom:30px}
+.ssc .prototype-callout{background:var(--tint);border:1px solid var(--line);padding:28px;margin:30px 0}
+.ssc .prototype-callout h3{font-size:24px;margin:0 0 12px}
+.ssc .prototype-callout .button{margin-top:20px}
+.ssc .flow{list-style:none;padding:0;display:grid;gap:12px;margin:26px 0}
+.ssc .flow li{padding:18px 22px;border:1px solid var(--line);background:var(--white);font-size:16px}
+.ssc .flow strong{display:block;font-size:17px;margin-bottom:4px}
+.ssc .flow .human{border-left:4px solid var(--accent)}
+.ssc .tour-steps img{background:var(--white)}
+.ssc .website-pair{display:grid;grid-template-columns:minmax(0,1fr) 180px;gap:18px;align-items:start;margin-top:26px}
+.ssc .website-pair img{width:100%;border:1px solid var(--line)}
+.ssc .website-pair figure{min-width:0}
+.ssc .evidence-label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:10px}
+.ssc .source-note{font-size:14px;color:var(--muted);margin-top:20px}
+.ssc .scope-list{grid-template-columns:1fr}
+.ssc .decision details p+p{padding-top:0}
+.ssc .prepared{display:inline-block;border:1px solid var(--line);padding:6px 10px;color:var(--muted);font-size:13px}
+@media(max-width:640px){.ssc .website-pair{grid-template-columns:minmax(0,1fr) 110px;gap:10px}.ssc .metrics dt{font-size:37px}.ssc .prototype-callout{padding:20px}.ssc-title{overflow-wrap:anywhere}}
