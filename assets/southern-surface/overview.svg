@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">Southern Surface Company: from opportunity to work</title><desc id="desc">Original conceptual illustration of a public service website connected to a separate human-reviewed lead workflow. All dashboard records are fictional.</desc>
+<rect width="1200" height="675" fill="#092c27"/>
+<path d="M0 490 1200 120M0 610 1200 240M300 675 1200 390" stroke="#25473d" stroke-width="1"/>
+<text x="64" y="76" fill="#d6bd7a" font-family="Arial,sans-serif" font-size="15" letter-spacing="3">SOUTHERN SURFACE COMPANY</text>
+<text x="64" y="151" fill="#fffaf0" font-family="Georgia,serif" font-size="55">From opportunity</text>
+<text x="64" y="215" fill="#fffaf0" font-family="Georgia,serif" font-size="55">to work on the ground.</text>
+<text x="66" y="262" fill="#ccdbd2" font-family="Arial,sans-serif" font-size="19">A service business. Two connected product experiences.</text>
+<rect x="64" y="317" width="430" height="263" rx="7" fill="#f5f1e7"/>
+<rect x="64" y="317" width="430" height="39" rx="7" fill="#173f34"/>
+<text x="85" y="343" fill="#fffaf0" font-family="Arial,sans-serif" font-size="13">SSC / PUBLIC WEBSITE</text>
+<text x="91" y="402" fill="#183e32" font-family="Georgia,serif" font-size="27">A better finish.</text>
+<text x="91" y="436" fill="#183e32" font-family="Georgia,serif" font-size="27">A different feeling.</text>
+<path d="M330 375h135v134H330z" fill="#dfd3ba"/><path d="M350 395h42v80h-42zM400 395h42v80h-42z" fill="#8f9e89"/>
+<text x="91" y="477" fill="#52645b" font-family="Arial,sans-serif" font-size="13">Painting / Flooring / Cleaning</text>
+<rect x="91" y="499" width="165" height="39" fill="#173f34"/><text x="111" y="524" fill="#fffaf0" font-family="Arial,sans-serif" font-size="13">Request a quote</text>
+<path d="M510 445h65m-9-8 9 8-9 8" fill="none" stroke="#d6bd7a" stroke-width="2"/>
+<rect x="594" y="284" width="542" height="296" rx="7" fill="#fcfaf5"/>
+<rect x="594" y="284" width="542" height="44" rx="7" fill="#e4e9df"/>
+<text x="616" y="312" fill="#183e32" font-family="Arial,sans-serif" font-size="13" letter-spacing="1">OPERATIONS / FICTIONAL PROTOTYPE</text>
+<text x="622" y="368" fill="#183e32" font-family="Georgia,serif" font-size="27">Opportunity review</text>
+<text x="622" y="396" fill="#52645b" font-family="Arial,sans-serif" font-size="13">Discover → Review → Follow up</text>
+<path d="M622 416h483M622 469h483M622 522h483" stroke="#d4dbcf"/>
+<text x="622" y="447" fill="#203c31" font-family="Arial,sans-serif" font-size="15">Cedar Vale Commons</text><text x="976" y="447" fill="#52645b" font-family="Arial,sans-serif" font-size="13">Needs review</text>
+<text x="622" y="500" fill="#203c31" font-family="Arial,sans-serif" font-size="15">Willow Bend Offices</text><text x="976" y="500" fill="#52645b" font-family="Arial,sans-serif" font-size="13">Qualified</text>
+<text x="622" y="553" fill="#52645b" font-family="Arial,sans-serif" font-size="13">People decide what becomes a lead.</text>
+<text x="64" y="627" fill="#ccdbd2" font-family="Arial,sans-serif" font-size="13" letter-spacing="1">PRODUCT DIRECTION / DESIGN / ENGINEERING / DELIVERY</text>
+</svg>

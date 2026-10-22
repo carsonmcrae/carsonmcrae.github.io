@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'">
+  <meta name="description" content="Explore an isolated, fictional Southern Surface Company lead discovery and review prototype. All interactions stay in memory.">
+  <meta name="theme-color" content="#f6f5ef">
+  <title>SSC · Interactive operations prototype</title>
+  <link rel="stylesheet" href="demo.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#workspace">Skip to workspace</a>
+  <header class="topbar">
+    <a class="wordmark" href="../"><span class="brand-mark" aria-hidden="true">S</span><span>Southern Surface<span class="wordmark-sub">Operations prototype</span></span></a>
+    <nav aria-label="Portfolio"><a href="../">Case study <span aria-hidden="true">↗</span></a><a href="../../">Portfolio</a><button id="theme-toggle" class="quiet" type="button" aria-pressed="false">Dark mode</button></nav>
+  </header>
+  <div class="notice"><strong>Interactive prototype — fictional data.</strong> No connection to Southern Surface Company’s production systems. Changes live only in this tab’s memory.</div>
+  <main>
+    <div class="workspace-heading"><div><p class="eyebrow">SSC / Operations</p><h1>From signal to next step.</h1><p class="subtitle">Explore discovery, human review, and a working lead pipeline.</p></div><button class="quiet" id="reset" type="button">Reset demo <span aria-hidden="true">↺</span></button></div>
+    <div class="workspace-shell">
+      <aside class="sidebar"><p class="eyebrow">Workspace</p><div class="tabs" role="tablist" aria-label="Operations views" aria-orientation="vertical"><button role="tab" id="tab-dashboard" aria-controls="workspace" aria-selected="true" tabindex="0" data-tab="dashboard">Overview <span aria-hidden="true">↗</span></button><button role="tab" id="tab-candidates" aria-controls="workspace" aria-selected="false" tabindex="-1" data-tab="candidates">Candidate review <span id="candidate-badge" class="nav-count">3</span></button><button role="tab" id="tab-leads" aria-controls="workspace" aria-selected="false" tabindex="-1" data-tab="leads">Verified leads <span id="lead-badge" class="nav-count">3</span></button><button role="tab" id="tab-runs" aria-controls="workspace" aria-selected="false" tabindex="-1" data-tab="runs">Discovery run log</button></div><div class="sidebar-note"><span class="status-dot" aria-hidden="true"></span><strong>Isolated demo</strong><p>Invented organizations.<br>No live data requests.<br>No messages sent.</p></div></aside>
+      <section id="workspace" class="workspace" role="tabpanel" aria-labelledby="tab-dashboard" tabindex="0"></section>
+    </div>
+    <section class="outcome card" aria-labelledby="outcome-heading"><div><p class="eyebrow">A separate fictional walkthrough</p><h2 id="outcome-heading">What could happen next?</h2><p class="muted">An illustrative route from discovery to a completed job. These steps do not change the sample pipeline or document a real customer outcome.</p></div><div id="outcome"></div></section>
+  </main>
+  <footer><p>All counts, records, scores, and activities are illustrative. Reload or reset to start again.</p><a href="../">Read the engineering case study <span aria-hidden="true">↗</span></a></footer>
+  <dialog id="detail" aria-labelledby="detail-title"><div id="detail-content"></div></dialog>
+  <div id="announcement" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+  <noscript><p class="notice">Enable JavaScript to explore this memory-only prototype. <a href="../">The case study is available without JavaScript.</a></p></noscript>
+</body>
+</html>
