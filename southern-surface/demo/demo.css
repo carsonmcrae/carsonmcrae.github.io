@@ -27,7 +27,7 @@ button:hover{border-color:var(--green);background:var(--tint)}
 .muted,.subtitle{color:var(--muted)}
 .topbar{min-height:94px;max-width:1376px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:20px 40px;gap:24px}
 .wordmark{display:flex;align-items:center;gap:13px;text-decoration:none;font-size:16px;font-weight:650;line-height:1.3}
-.brand-mark{width:38px;height:42px;background:var(--green);color:var(--solid);display:grid;place-items:center;font:27px Georgia,serif;border-radius:2px 13px 2px 2px}
+.brand-icon{display:block;flex-shrink:0;width:42px;height:42px;border-radius:8px}
 .wordmark-sub{display:block;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:4px}
 .topbar nav{display:flex;align-items:center;gap:24px;font-size:12px}
 .topbar nav a{display:flex;align-items:center;gap:8px;min-height:44px;text-decoration:none}
@@ -163,7 +163,7 @@ dialog::backdrop{background:#12271acc;backdrop-filter:blur(3px)}
 @media(max-width:720px){body{font-size:14px}
 .topbar{padding:17px 20px;min-height:85px}
 .wordmark{font-size:13px;gap:9px}
-.brand-mark{width:30px;height:36px;font-size:23px}
+.brand-icon{width:34px;height:34px;border-radius:6px}
 .wordmark-sub{font-size:8px}
 .topbar nav{gap:11px}
 .topbar nav a{font-size:10px}
